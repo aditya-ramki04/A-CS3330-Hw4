@@ -101,6 +101,13 @@ public abstract class Vehicle {
 		this.startType = startType;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Vehicle [brand=" + brand + ", make=" + make + ", modelYear=" + modelYear + ", price=" + price
+				+ ", color=" + color + ", fuelType=" + fuelType + ", mileage=" + mileage + ", mass=" + mass
+				+ ", cylinders=" + cylinders + ", gasTankCapacity=" + gasTankCapacity + ", startType=" + startType
+				+ "]";
+	}
+
 	
 }
