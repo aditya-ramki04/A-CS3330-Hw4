@@ -14,6 +14,10 @@ public abstract class Vehicle {
 	protected double gasTankCapacity;
 	protected StartMechanism startType;
 	
+	public abstract void calculateMaintenaceCost(double distance);
+	public abstract void calculateFuelEfficency(double distance, double fuelPrice);
+	public abstract void startEngine();
+	
 	public Vehicle(String brand, String make, long modelYear, double price, VehicleColor color, 
 			FuelType fuelType, double mileage, double mass, int cylinders, double gasTankCapacity,
             StartMechanism startType) 
