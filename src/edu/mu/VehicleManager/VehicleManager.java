@@ -177,9 +177,11 @@ public class VehicleManager {
 	    }
 	}
 	
-//	public void displayAllVehicleInformation() {
-//		
-//	}
+	public void displayAllVehicleInformation() {
+		for(Vehicle vehicle: vehicleList) {
+			vehicle.toString();
+		}
+	}
 	
 //by nmc	
 	//same function as the one commented below just can tell if it works or not from
