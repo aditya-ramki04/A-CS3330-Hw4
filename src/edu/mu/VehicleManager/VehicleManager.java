@@ -8,9 +8,14 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import edu.mu.Vehicle.Car;
+import edu.mu.Vehicle.FuelType;
+import edu.mu.Vehicle.MotorBike;
 import edu.mu.Vehicle.SUV;
+import edu.mu.Vehicle.StartMechanism;
 import edu.mu.Vehicle.Truck;
 import edu.mu.Vehicle.Vehicle;
+import edu.mu.Vehicle.VehicleColor;
 
 
 public class VehicleManager {
@@ -53,18 +58,33 @@ public class VehicleManager {
 				String make = parts[2];
 				int modelYear = Integer.parseInt(parts[3]); //using parseInt to parse it from String to int and then storing it in id.
 				int price = Integer.parseInt(parts[4]);
-				String color = parts[5];
-				String fuelType = parts[6];
-				String mileage = parts[7];
+				VehicleColor color = VehicleColor.valueOf(parts[5]);
+				FuelType fuelType = FuelType.valueOf(parts[6]);
+				double mileage = Double.parseDouble(parts[7]);
 				double mass = Double.parseDouble(parts[8]);
 				int cylinders = Integer.parseInt(parts[9]);
 				int gasTankCapacity = Integer.parseInt(parts[10]);
-				String startType = parts[11];
+				StartMechanism startType = StartMechanism.valueOf(parts[11]);
 				if(type.equals("Truck"))
-					{
-						vehicleList.add(new Truck(model, make, modelYear, price, color,
-								fuelType, mileage, mass, cylinders, gasTankCapacity, startType));
-					}
+				{
+					vehicleList.add(new Truck(model, make, modelYear, price, color,
+							fuelType, mileage, mass, cylinders, gasTankCapacity, startType));
+				}
+				if(type.equals("MotorBike"))
+				{
+					vehicleList.add(new MotorBike(model, make, modelYear, price, color,
+							fuelType, mileage, mass, cylinders, gasTankCapacity, startType));
+				}
+				if(type.equals("Car"))
+				{
+					vehicleList.add(new Car(model, make, modelYear, price, color,
+							fuelType, mileage, mass, cylinders, gasTankCapacity, startType));
+				}
+				if(type.equals("SUV"))
+				{
+					vehicleList.add(new SUV(model, make, modelYear, price, color,
+							fuelType, mileage, mass, cylinders, gasTankCapacity, startType));
+				}
 				
 			}
 			fileIn.close();//closes file
@@ -187,6 +207,7 @@ public class VehicleManager {
 //		
 //	}
 	
+<<<<<<< Updated upstream
 	//Abhi made this code.
 	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) 
 	{
@@ -220,6 +241,12 @@ public class VehicleManager {
     }
 	
 	
+=======
+//	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
+//		
+//	}
+	//this is not right fix it later
+>>>>>>> Stashed changes
 	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
 		 	if (vehicleList.isEmpty()) 
 		 	{

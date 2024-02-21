@@ -12,7 +12,8 @@ public class SUV extends Vehicle {
 	public void calculateMaintenaceCost(double distance) {
 		// TODO Auto-generated method stub
 		
-	}
+    }
+		
 
 	@Override
 	public void calculateFuelEfficency(double distance, double fuelPrice) {
