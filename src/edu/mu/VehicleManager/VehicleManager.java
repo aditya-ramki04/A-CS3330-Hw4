@@ -149,9 +149,21 @@ public class VehicleManager {
 		}
 		
 	}
-//	public void displayAllMotorBikeInformation() {
-//		
-//	}
+	public void displayAllMotorBikeInformation() {
+		boolean foundBike = false;
+		for (Vehicle vehicle : vehicleList)
+		{
+			if (isVehicleType(vehicle, MotorBike.class))
+			{
+				foundBike = true;
+				displayVehicleInformation(vehicle);
+			}
+		}
+		if(!foundBike)
+		{
+			System.out.println("No trucks have been found.");
+		}
+	}
 	
 	public void displayVehicleInformation(Vehicle v)
 	{
