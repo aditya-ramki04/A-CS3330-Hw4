@@ -13,15 +13,17 @@ public class Truck extends Vehicle
 	
 
 	@Override
-	public abstract double calculateMaintenaceCost(double distance, double fuelPrice) 
+	public double calculateMaintenaceCost(double distance, double fuelPrice) 
 	{
 		double maintenance = distance * mass * (2024 - modelYear) * cylinders * 0.002;
 		return maintenance;
 	}
 
 	@Override
-	public double calculateFuelEfficency(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
+	public double calculateFuelEfficiency(double distance, double fuelPrice) 
+	{
+		double fuelEfficiency = cylinders * gasTankCapacity * fuelPrice/distance *0.1;
+		return fuelEfficiency;
 		
 	}
 
