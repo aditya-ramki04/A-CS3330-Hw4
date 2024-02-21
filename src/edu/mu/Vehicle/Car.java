@@ -9,7 +9,7 @@ public class Car extends Vehicle {
 	}
 
 	@Override
-	public void calculateMaintenaceCost(double distance) {
+	public void calculateMaintenaceCost(double distance, double fuelPrice) {
 		// TODO Auto-generated method stub
 		
 	}
