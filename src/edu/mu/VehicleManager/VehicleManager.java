@@ -187,9 +187,38 @@ public class VehicleManager {
 //		
 //	}
 	
-//	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
-//		
-//	}
+	//Abhi made this code.
+	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) 
+	{
+		if (vehicleList.isEmpty()) 
+	 	{
+            System.out.println("No vehicles in the list.");
+            return null;
+	 	}
+	 	
+		Vehicle highestCostVehicle = null;
+        double highestMaintenanceCost = Double.MIN_VALUE;
+
+        for (Vehicle vehicle : vehicleList) {
+            double maintenanceCost = vehicle.calculateMaintenaceCost(distance);
+
+            if (maintenanceCost > highestMaintenanceCost) 
+            {
+                highestMaintenanceCost = maintenanceCost;
+                highestCostVehicle = vehicle;
+            } 
+            else if (maintenanceCost == highestMaintenanceCost) 
+            {
+                Random random = new Random();
+                if (random.nextBoolean()) 
+                {
+                    highestCostVehicle = vehicle;
+                }
+            }
+        }
+        return highestCostVehicle;
+    }
+	
 	
 	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
 		 	if (vehicleList.isEmpty()) 
