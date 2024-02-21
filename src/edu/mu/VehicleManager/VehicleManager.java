@@ -7,11 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-<<<<<<< Updated upstream
 import edu.mu.Vehicle.SUV;
-=======
 import edu.mu.Vehicle.Truck;
->>>>>>> Stashed changes
 import edu.mu.Vehicle.Vehicle;
 
 
@@ -97,7 +94,6 @@ public class VehicleManager {
 //		
 //	}
 	
-<<<<<<< Updated upstream
 //	public void displayAllTruckInformation() {
 //		
 //	}
@@ -118,7 +114,6 @@ public class VehicleManager {
 		        System.out.println("No SUVs found in the vehicle list.");
 		    }
 	}
-=======
 	public void displayAllTruckInformation() 
 	{
 		boolean foundTruck = false;
@@ -142,7 +137,6 @@ public class VehicleManager {
 //	public void displayAllSUVInformation() {
 //		
 //	}
->>>>>>> Stashed changes
 //	
 //	public void displayAllMotorBikeInformation() {
 //		
