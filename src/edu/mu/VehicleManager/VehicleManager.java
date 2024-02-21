@@ -1,21 +1,8 @@
 package edu.mu.VehicleManager;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import edu.mu.Vehicle.*;
 
-import edu.mu.Vehicle.Car;
-import edu.mu.Vehicle.FuelType;
-import edu.mu.Vehicle.MotorBike;
-import edu.mu.Vehicle.SUV;
-import edu.mu.Vehicle.StartMechanism;
-import edu.mu.Vehicle.Truck;
-import edu.mu.Vehicle.Vehicle;
-import edu.mu.Vehicle.VehicleColor;
 
 
 public class VehicleManager {
@@ -127,11 +114,7 @@ public class VehicleManager {
 		}
 	}
 //nmc
-	
-//	public void displayAllTruckInformation() {
-//		
-//	}
-//	
+		
 	public void displayAllSUVInformation() 
 	{
 		 boolean foundSUV = false;
@@ -166,11 +149,6 @@ public class VehicleManager {
 		}
 		
 	}
-
-//	public void displayAllSUVInformation() {
-//		
-//	}
-//	
 //	public void displayAllMotorBikeInformation() {
 //		
 //	}
@@ -242,9 +220,20 @@ public class VehicleManager {
 //		
 //	}
 	
-//	private boolean isVehicleType(Vehicle v, Class clazz) {
-//		
-//	}
+	private boolean isVehicleType(Vehicle v, Class clazz) {
+		boolean correctType = clazz.isInstance(v);
+
+	    if (correctType) 
+	    {
+	        System.out.println(v.getClass().getSimpleName() + " is a " + clazz.getSimpleName());
+	    } 
+	    else 
+	    {
+	        System.out.println(v.getClass().getSimpleName() + " is not a " + clazz.getSimpleName());
+	    }
+
+	    return correctType;
+	}
 	
 //	public int getNumberOfVehichlesByType(Class clazz) {
 //		
