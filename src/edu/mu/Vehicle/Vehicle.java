@@ -18,21 +18,21 @@ public abstract class Vehicle {
 	public abstract void calculateFuelEfficency(double distance, double fuelPrice);
 	public abstract void startEngine();
 	
-	public Vehicle(String brand, String make, long modelYear, double price, VehicleColor color, 
-			FuelType fuelType, double mileage, double mass, int cylinders, double gasTankCapacity,
-            StartMechanism startType) 
+	public Vehicle(String brand, String make, long modelYear, double price, String color2, 
+			String fuelType2, String mileage2, double mass, int cylinders, double gasTankCapacity,
+            String startType2) 
 	{
 	 this.brand = brand;
 	 this.make = make;
 	 this.modelYear = modelYear;
 	 this.price = price;
-	 this.color = color;
-	 this.fuelType = fuelType;
-	 this.mileage = mileage;
+	 this.color = color2;
+	 this.fuelType = fuelType2;
+	 this.mileage = mileage2;
 	 this.mass = mass;
 	 this.cylinders = cylinders;
 	 this.gasTankCapacity = gasTankCapacity;
-	 this.startType = startType;
+	 this.startType = startType2;
 	}
 	public String getBrand() {
 		return brand;
