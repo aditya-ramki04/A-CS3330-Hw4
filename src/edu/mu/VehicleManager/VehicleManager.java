@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import edu.mu.Vehicle.SUV;
 import edu.mu.Vehicle.Vehicle;
 
 
@@ -87,9 +89,22 @@ public class VehicleManager {
 //		
 //	}
 //	
-//	public void displayAllSUVInformation() {
-//		
-//	}
+	public void displayAllSUVInformation() 
+	{
+		 boolean foundSUV = false;
+		    for (Vehicle vehicle : vehicleList) 
+		    {
+		        if (isVehicleType(vehicle, SUV.class)) 
+		        {
+		            foundSUV = true;
+		            displayVehicleInformation(vehicle);
+		        }
+		    }
+		    if (!foundSUV) 
+		    {
+		        System.out.println("No SUVs found in the vehicle list.");
+		    }
+	}
 //	
 //	public void displayAllMotorBikeInformation() {
 //		
