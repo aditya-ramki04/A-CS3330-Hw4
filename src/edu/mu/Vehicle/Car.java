@@ -9,15 +9,17 @@ public class Car extends Vehicle {
 	}
 
 	@Override
-	public void calculateMaintenaceCost(double distance, double fuelPrice) {
+	public double calculateMaintenaceCost(double distance, double fuelPrice) {
 		// TODO Auto-generated method stub
-		
+		double maintenance = distance * mass * (2024 - modelYear) * cylinders * 0.002;
+		return maintenance;
 	}
 
 	@Override
-	public void calculateFuelEfficency(double distance, double fuelPrice) {
+	public double calculateFuelEfficiency(double distance, double fuelPrice) {
 		// TODO Auto-generated method stub
-		
+		double fuelEfficiency = cylinders * gasTankCapacity * fuelPrice/distance *0.1;
+		return fuelEfficiency;
 	}
 
 	@Override
