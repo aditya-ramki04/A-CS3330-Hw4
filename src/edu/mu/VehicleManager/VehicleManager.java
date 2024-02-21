@@ -222,9 +222,51 @@ public class VehicleManager {
 		return false;
 	}
 	
-//	public boolean saveVehicleList() {
-//		
-//	}
+	public boolean saveVehicleList() {
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter(vehicleFilePath, false));
+			bw.write("Type,Title,Price,Year,Genre");
+			bw.newLine();
+			
+		
+			String type = null;
+			
+			for(Vehicle vehicle : vehicleList) {
+				
+				
+				if(vehicle instanceof MotorBike) {
+					type = "MotorBike";
+				}
+				if(vehicle instanceof SUV) {
+					type = "SUV";
+				}
+				if(vehicle instanceof Car) {
+					type = "Car";
+				}
+				if(vehicle instanceof Truck) {
+					type = "Truck";
+				}
+				//Type,Model,Make,ModelYear,Price,Color,FuelType,Mileage,Mass,Cylinders,GasTankCapacity,StartType
+				
+				bw.write(type + "," + vehicle.getBrand() + "," + vehicle.getMake() + "," + vehicle.getModelYear() + "," + vehicle.getPrice()+ "," + vehicle.getColor()+ "," + vehicle.getFuelType()+ "," + vehicle.getMileage()+ "," + vehicle.getMass()+ "," + vehicle.getCylinders()+ "," + vehicle.getGasTankCapacity()+ "," + vehicle.getStartType());
+				bw.newLine();
+			}
+			bw.close();
+			
+			if (vehicleList.isEmpty()) {
+				System.out.println("Cannot save empty stock.");
+				return false;
+			}
+			
+			System.out.println("Stock saved successfully.");
+			return true;
+				
+
+			} catch (IOException e) {
+				e.printStackTrace();
+				return false;
+			}
+	}
 	
 	private boolean isVehicleType(Vehicle v, Class clazz) {
 		boolean correctType = clazz.isInstance(v);
