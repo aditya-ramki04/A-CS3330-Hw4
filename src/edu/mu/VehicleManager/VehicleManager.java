@@ -107,9 +107,23 @@ public class VehicleManager {
 //		
 //	}
 	
-//	public boolean addVehicle(Vehicle vehicle) {
-//		
-//	}
+	//Abhi added this code to correctly instantiate vehicleList
+	public ArrayList<Vehicle> getVehicleList() {
+		return vehicleList;
+	}
+	public void setVehicleList(ArrayList<Vehicle> vehicleList) {
+		this.vehicleList = vehicleList;
+	}
+	
+	//Abhi made this code
+	public boolean addVehicle(Vehicle vehicle) 
+	{
+		if(vehicle != null) {
+			getVehicleList().add(vehicle);
+			return true;
+		}
+		return false;
+	}
 	
 //	public boolean saveVehicleList() {
 //		
