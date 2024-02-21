@@ -207,7 +207,7 @@ public class VehicleManager {
 //		
 //	}
 	
-<<<<<<< Updated upstream
+
 	//Abhi made this code.
 	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) 
 	{
@@ -241,12 +241,8 @@ public class VehicleManager {
     }
 	
 	
-=======
-//	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
-//		
-//	}
 	//this is not right fix it later
->>>>>>> Stashed changes
+
 	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
 		 	if (vehicleList.isEmpty()) 
 		 	{
