@@ -9,15 +9,17 @@ public class SUV extends Vehicle {
 	}
 
 	@Override
-	public void calculateMaintenaceCost(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
-		
-    }
-		
+	public double calculateMaintenaceCost(double distance, double fuelPrice) 
+	{
+		double maintenance = distance * mass * (2024 - modelYear) * cylinders * 0.001;
+		return maintenance;
+	}
 
 	@Override
-	public void calculateFuelEfficency(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
+	public double calculateFuelEfficiency(double distance, double fuelPrice) 
+	{
+		double fuelEfficiency = cylinders * gasTankCapacity * fuelPrice/distance *0.05;
+		return fuelEfficiency;
 		
 	}
 

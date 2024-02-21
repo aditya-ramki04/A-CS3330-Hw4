@@ -12,6 +12,8 @@ public class VehicleManager {
 	// Define paths as final so that they cannot be modified later.
 	private final static String vehicleFilePath = "files/vehicleList.csv";
 	private ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
+	private final static double distance = 300;
+	private final static double fuelPrice = 3.25;
 	
 	
 	public VehicleManager() {
@@ -333,7 +335,7 @@ public class VehicleManager {
 	        double lowestMaintenanceCost = Double.MAX_VALUE;
 
 	        for (Vehicle vehicle : vehicleList) {
-	            double maintenanceCost = vehicle.calculateMaintenaceCost(distance);
+	            double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
 
 	            if (maintenanceCost < lowestMaintenanceCost) 
 	            {
@@ -353,6 +355,9 @@ public class VehicleManager {
 	        return lowestCostVehicle;
 	    }
 	}
+	
+	
+	
 	
 	
 	
