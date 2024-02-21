@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+<<<<<<< Updated upstream
 import edu.mu.Vehicle.SUV;
+=======
+import edu.mu.Vehicle.Truck;
+>>>>>>> Stashed changes
 import edu.mu.Vehicle.Vehicle;
 
 
@@ -77,6 +81,14 @@ public class VehicleManager {
 		
 	}
 	
+	//Abhi added this code to correctly instantiate vehicleList
+	public ArrayList<Vehicle> getVehicleList() {
+		return vehicleList;
+	}
+	public void setVehicleList(ArrayList<Vehicle> vehicleList) {
+		this.vehicleList = vehicleList;
+	}
+	
 //	public void VehicleManager(String fileName) {
 //		
 //	}
@@ -85,6 +97,7 @@ public class VehicleManager {
 //		
 //	}
 	
+<<<<<<< Updated upstream
 //	public void displayAllTruckInformation() {
 //		
 //	}
@@ -105,6 +118,31 @@ public class VehicleManager {
 		        System.out.println("No SUVs found in the vehicle list.");
 		    }
 	}
+=======
+	public void displayAllTruckInformation() 
+	{
+		boolean foundTruck = false;
+		for (Vehicle vehicle : vehicleList)
+		{
+			if (isVehicleType(vehicle, Truck.class))
+			{
+				foundTruck = true;
+				displayVehicleInformation(vehicle);
+			}
+		}
+		if(!foundTruck)
+		{
+			System.out.println("No trucks have been found.");
+		}
+		
+		
+		
+	}
+
+//	public void displayAllSUVInformation() {
+//		
+//	}
+>>>>>>> Stashed changes
 //	
 //	public void displayAllMotorBikeInformation() {
 //		
@@ -122,13 +160,7 @@ public class VehicleManager {
 //		
 //	}
 	
-	//Abhi added this code to correctly instantiate vehicleList
-	public ArrayList<Vehicle> getVehicleList() {
-		return vehicleList;
-	}
-	public void setVehicleList(ArrayList<Vehicle> vehicleList) {
-		this.vehicleList = vehicleList;
-	}
+	
 	
 	//Abhi made this code
 	public boolean addVehicle(Vehicle vehicle) 
