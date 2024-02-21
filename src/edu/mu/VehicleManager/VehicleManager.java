@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import edu.mu.Vehicle.SUV;
@@ -13,6 +14,7 @@ import edu.mu.Vehicle.Vehicle;
 
 
 public class VehicleManager {
+
 
 	private static VehicleManager instance = null;
 	// Define paths as final so that they cannot be modified later.
@@ -114,6 +116,7 @@ public class VehicleManager {
 		        System.out.println("No SUVs found in the vehicle list.");
 		    }
 	}
+	
 	public void displayAllTruckInformation() 
 	{
 		boolean foundTruck = false;
@@ -130,8 +133,6 @@ public class VehicleManager {
 			System.out.println("No trucks have been found.");
 		}
 		
-		
-		
 	}
 
 //	public void displayAllSUVInformation() {
@@ -142,9 +143,17 @@ public class VehicleManager {
 //		
 //	}
 	
-//	public void displayVehicleInformation(Vehicle v){
-//		
-//	}
+	public void displayVehicleInformation(Vehicle v)
+	{
+		if (v != null) 
+		{
+	        System.out.println(v.toString());
+	    } 
+		else 
+		{
+	        System.out.println("Invalid vehicle object. Cannot display information.");
+	    }
+	}
 	
 //	public void displayAllVehicleInformation() {
 //		
@@ -154,8 +163,8 @@ public class VehicleManager {
 //		
 //	}
 	
-	
-	
+
+
 	//Abhi made this code
 	public boolean addVehicle(Vehicle vehicle) 
 	{
@@ -182,9 +191,36 @@ public class VehicleManager {
 //		
 //	}
 	
-//	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
-//		
-//	}
+	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
+		 	if (vehicleList.isEmpty()) 
+		 	{
+	            System.out.println("No vehicles in the list.");
+	            return null;
+		 	}
+		 	Vehicle lowestCostVehicle = null;
+	        double lowestMaintenanceCost = Double.MAX_VALUE;
+
+	        for (Vehicle vehicle : vehicleList) {
+	            double maintenanceCost = vehicle.calculateMaintenaceCost(distance);
+
+	            if (maintenanceCost < lowestMaintenanceCost) 
+	            {
+	                lowestMaintenanceCost = maintenanceCost;
+	                lowestCostVehicle = vehicle;
+	            } 
+	            else if (maintenanceCost == lowestMaintenanceCost) 
+	            {
+	                // Randomly choose between the current vehicle and the one with the same maintenance cost
+	                Random random = new Random();
+	                if (random.nextBoolean()) 
+	                {
+	                    lowestCostVehicle = vehicle;
+	                }
+	            }
+	        }
+	        return lowestCostVehicle;
+	    }
+	}
 	
 	
 	

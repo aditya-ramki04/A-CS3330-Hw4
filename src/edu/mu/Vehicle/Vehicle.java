@@ -18,9 +18,9 @@ public abstract class Vehicle {
 	public abstract void calculateFuelEfficency(double distance, double fuelPrice);
 	public abstract void startEngine();
 	
-	public Vehicle(String brand, String make, long modelYear, double price, String color2, 
-			String fuelType2, String mileage2, double mass, int cylinders, double gasTankCapacity,
-            String startType2) 
+	public Vehicle(String brand, String make, long modelYear, double price, VehicleColor color2, 
+			FuelType fuelType2, double mileage2, double mass, int cylinders, double gasTankCapacity,
+            StartMechanism startType2) 
 	{
 	 this.brand = brand;
 	 this.make = make;
