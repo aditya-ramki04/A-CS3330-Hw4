@@ -112,9 +112,21 @@ public class VehicleManager {
 //		
 //	}
 	
-//	public void displayAllCarInformation() {
-//		
-//	}
+//nmc	
+	public void displayAllCarInformation() {
+		
+		boolean foundCar = false;
+		for(Vehicle vehicle : vehicleList) {
+			if(isVehicleType(vehicle, Car.class)){
+				foundCar = true;
+				displayVehicleInformation(vehicle);
+			}
+		}
+		if(!foundCar) {
+			System.out.println("No Cars found in the vehicle list.");
+		}
+	}
+//nmc
 	
 //	public void displayAllTruckInformation() {
 //		
