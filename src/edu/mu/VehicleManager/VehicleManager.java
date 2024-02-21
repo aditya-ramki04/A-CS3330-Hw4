@@ -87,14 +87,6 @@ public class VehicleManager {
 		
 	}
 	
-	//Abhi added this code to correctly instantiate vehicleList
-	public ArrayList<Vehicle> getVehicleList() {
-		return vehicleList;
-	}
-	public void setVehicleList(ArrayList<Vehicle> vehicleList) {
-		this.vehicleList = vehicleList;
-	}
-	
 //	public void VehicleManager(String fileName) {
 //		
 //	}
@@ -224,7 +216,7 @@ public class VehicleManager {
 	public boolean addVehicle(Vehicle vehicle) 
 	{
 		if(vehicle != null) {
-			getVehicleList().add(vehicle);
+			vehicleList.add(vehicle);
 			return true;
 		}
 		return false;

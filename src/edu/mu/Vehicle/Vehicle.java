@@ -16,6 +16,8 @@ public abstract class Vehicle {
 	
 	public abstract void calculateMaintenaceCost(double distance, double fuelPrice);
 	public abstract void calculateFuelEfficency(double distance, double fuelPrice);
+	public abstract double calculateMaintenaceCost(double distance, double fuelPrice);
+	public abstract double calculateFuelEfficency(double distance, double fuelPrice);
 	public abstract void startEngine();
 	
 	public Vehicle(String brand, String make, long modelYear, double price, VehicleColor color2, 
@@ -108,6 +110,6 @@ public abstract class Vehicle {
 				+ ", cylinders=" + cylinders + ", gasTankCapacity=" + gasTankCapacity + ", startType=" + startType
 				+ "]";
 	}
-
+	
 	
 }
