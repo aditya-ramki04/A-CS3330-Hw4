@@ -319,7 +319,6 @@ public class VehicleManager {
 		
 		
 		
-	}
 	
 
 	//Abhi made this code.
@@ -335,7 +334,7 @@ public class VehicleManager {
         double highestMaintenanceCost = Double.MIN_VALUE;
 
         for (Vehicle vehicle : vehicleList) {
-            double maintenanceCost = vehicle.calculateMaintenaceCost(distance);
+            double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
 
             if (maintenanceCost > highestMaintenanceCost) 
             {
