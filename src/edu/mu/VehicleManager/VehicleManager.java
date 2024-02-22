@@ -322,7 +322,7 @@ public class VehicleManager {
 	
 
 	//Abhi made this code.
-	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) 
+	public Vehicle getVehicleWithHighestMaintenanceCost() 
 	{
 		if (vehicleList.isEmpty()) 
 	 	{
@@ -356,7 +356,7 @@ public class VehicleManager {
 	
 	//this is not right fix it later
 
-	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
+	public Vehicle getVehicleWithLowestMaintenanceCost() {
 		 	if (vehicleList.isEmpty()) 
 		 	{
 	            System.out.println("No vehicles in the list.");
