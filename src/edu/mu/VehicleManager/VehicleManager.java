@@ -95,9 +95,6 @@ public class VehicleManager {
 		
 	}
 	
-//	public void VehicleManager(String fileName) {
-//		
-//	}
 	
 //nmc	
 	public void displayAllCarInformation() {
@@ -149,6 +146,8 @@ public class VehicleManager {
 		}
 		
 	}
+	
+	//Aditya
 	public void displayAllMotorBikeInformation() {
 		boolean foundBike = false;
 		for (Vehicle vehicle : vehicleList)
@@ -177,6 +176,7 @@ public class VehicleManager {
 	    }
 	}
 	
+	//Aditya
 	public void displayAllVehicleInformation() {
 		for(Vehicle vehicle: vehicleList) {
 			vehicle.toString();
@@ -230,6 +230,7 @@ public class VehicleManager {
 		return false;
 	}
 	
+	//Aditya
 	public boolean saveVehicleList() {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(vehicleFilePath, false));
@@ -418,6 +419,34 @@ public class VehicleManager {
 			return -1.0;
 		}
 		return totalFuelEfficiency / suvCount;
+	}
+	
+	
+	//Aditya
+	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
+		if (vehicleList.isEmpty()) 
+	 	{
+            System.out.println("No vehicles in the list.");
+            return new ArrayList<>();
+	 	}
+	 	ArrayList <Vehicle> highestEfficientVehicles = new ArrayList<>();
+        double highestFuelEfficiency = Double.MIN_VALUE;
+
+        for (Vehicle vehicle : vehicleList) {
+            double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+
+            if (fuelEfficiency > highestFuelEfficiency) 
+            {
+            	highestFuelEfficiency = fuelEfficiency;
+            	highestEfficientVehicles.clear();
+            	highestEfficientVehicles.add(vehicle);
+            } 
+            else if (fuelEfficiency == highestFuelEfficiency) 
+            {
+            	highestEfficientVehicles.add(vehicle);
+            }
+        }
+        return highestEfficientVehicles;
 	}
 		
 }
