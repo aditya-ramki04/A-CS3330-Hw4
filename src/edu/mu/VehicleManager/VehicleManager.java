@@ -289,6 +289,38 @@ public class VehicleManager {
 //		
 //	}
 	
+	//Abhi wrote this code
+	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double fuelPrice)
+	{
+		if (vehicleList.isEmpty()) 
+	 	{
+            System.out.println("No vehicles in the list.");
+            return new ArrayList<>();
+	 	}
+	 	ArrayList <Vehicle> lowestEfficientVehicles = new ArrayList<>();
+        double lowestFuelEfficiency = Double.MAX_VALUE;
+
+        for (Vehicle vehicle : vehicleList) {
+            double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+
+            if (fuelEfficiency < lowestFuelEfficiency) 
+            {
+                lowestFuelEfficiency = fuelEfficiency;
+                lowestEfficientVehicles.clear();
+                lowestEfficientVehicles.add(vehicle);
+            } 
+            else if (fuelEfficiency == lowestFuelEfficiency) 
+            {
+            	lowestEfficientVehicles.add(vehicle);
+            }
+        }
+        return lowestEfficientVehicles;
+    }
+		
+		
+		
+	}
+	
 
 	//Abhi made this code.
 	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) 
