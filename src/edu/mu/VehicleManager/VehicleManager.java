@@ -403,9 +403,25 @@ public class VehicleManager {
 	    }
 	
 	public double getAverageFuelEfficiencyofSUVs(double distance, double fuelPrice) {
-
+		double totalFuelEfficiency = 0.0;
+		int suvCount = 0;
 		
+		for(Vehicle vehicle : vehicleList) {
+			if(isVehicleType(vehicle, SUV.class)) {
+				double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+	            totalFuelEfficiency += fuelEfficiency;
+	            suvCount++;
+			}
+		}
+		if(suvCount == 0) {
+			System.out.println("No SUVs exist in the list.");
+			return -1.0;
+		}
+		return totalFuelEfficiency / suvCount;
 	}
+		
+}
+
 	
 	
 	

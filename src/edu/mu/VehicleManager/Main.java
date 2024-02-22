@@ -25,6 +25,7 @@ public class Main {
 		 //nmc
 		 int numberOfTrucks = vehicleManager.getNumberOfVehichlesByType(Truck.class);
 		 int numberOfSUVs = vehicleManager.getNumberOfVehichlesByType(SUV.class);
+	     System.out.println("Average Fuel Efficiency of SUVs: " + vehicleManager.getAverageFuelEfficiencyofSUVs(vehicleManager.getDistance(), vehicleManager.getFuelPrice()));
 
 		 
 		 

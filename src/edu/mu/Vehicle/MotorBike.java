@@ -9,20 +9,23 @@ public class MotorBike extends Vehicle{
 	}
 
 	@Override
-	public void calculateMaintenaceCost(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
-		
+	public double calculateMaintenaceCost(double distance, double fuelPrice) 
+	{
+		double maintenance = distance * mass * (2024 - modelYear) * cylinders * 0.0002;
+		return maintenance;
 	}
 
 	@Override
-	public void calculateFuelEfficency(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
+	public double calculateFuelEfficiency(double distance, double fuelPrice) 
+	{
+		double fuelEfficiency = cylinders * gasTankCapacity * fuelPrice/distance *0.001;
+		return fuelEfficiency;
 		
 	}
 
 	@Override
 	public void startEngine() {
-		// TODO Auto-generated method stub
+		System.out.println("The MotorBike has started using " + startType + "!");
 		
 	}
 
