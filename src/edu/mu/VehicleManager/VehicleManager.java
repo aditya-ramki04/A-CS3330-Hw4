@@ -51,14 +51,14 @@ public class VehicleManager {
 				String type = parts[0];
 				String model = parts[1];
 				String make = parts[2];
-				int modelYear = Integer.parseInt(parts[3]); //using parseInt to parse it from String to int and then storing it in id.
-				int price = Integer.parseInt(parts[4]);
+				long modelYear = Long.parseLong(parts[3]); //using parseInt to parse it from String to int and then storing it in id.
+				double price = Double.parseDouble(parts[4]);
 				VehicleColor color = VehicleColor.valueOf(parts[5]);
 				FuelType fuelType = FuelType.valueOf(parts[6]);
 				double mileage = Double.parseDouble(parts[7]);
 				double mass = Double.parseDouble(parts[8]);
 				int cylinders = Integer.parseInt(parts[9]);
-				int gasTankCapacity = Integer.parseInt(parts[10]);
+				double gasTankCapacity = Double.parseDouble(parts[10]);
 				StartMechanism startType = StartMechanism.valueOf(parts[11]);
 				if(type.equals("Truck"))
 				{
@@ -257,7 +257,7 @@ public class VehicleManager {
 				}
 				//Type,Model,Make,ModelYear,Price,Color,FuelType,Mileage,Mass,Cylinders,GasTankCapacity,StartType
 				
-				bw.write(type + "," + vehicle.getBrand() + "," + vehicle.getMake() + "," + vehicle.getModelYear() + "," + vehicle.getPrice()+ "," + vehicle.getColor()+ "," + vehicle.getFuelType()+ "," + vehicle.getMileage()+ "," + vehicle.getMass()+ "," + vehicle.getCylinders()+ "," + vehicle.getGasTankCapacity()+ "," + vehicle.getStartType());
+				bw.write(type + "," + vehicle.getBrand() + "," + vehicle.getMake() + "," + vehicle.getModelYear() + "," + (vehicle.getPrice())+ "," + vehicle.getColor()+ "," + vehicle.getFuelType()+ "," + vehicle.getMileage()+ "," + vehicle.getMass()+ "," + vehicle.getCylinders()+ "," + vehicle.getGasTankCapacity()+ "," + vehicle.getStartType());
 				bw.newLine();
 			}
 			bw.close();

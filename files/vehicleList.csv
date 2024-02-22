@@ -1,4 +1,4 @@
-Type,Title,Price,Year,Genre
+Type,Model,Make,ModelYear,Price,Color,FuelType,Mileage,Mass,Cylinders,GasTankCapacity,StartType
 Truck,Toyota,Takuma,2000,100000.0,WHITE,DIESEL,50000.0,2.0,12,25.0,KEYSTART
 MotorBike,BMW,G310,2014,35000.0,BLACK,GASOLINE,3000.0,0.1,4,10.0,KICKSTART
 Car,Nissan,Sentra,2018,18000.0,RED,GASOLINE,1000.0,0.3,6,14.0,PUSHSTART
