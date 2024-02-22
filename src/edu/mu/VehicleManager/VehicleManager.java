@@ -278,18 +278,12 @@ public class VehicleManager {
 	}
 	
 	private boolean isVehicleType(Vehicle v, Class clazz) {
-		boolean correctType = clazz.isInstance(v);
-
-	    if (correctType) 
-	    {
-	        System.out.println(v.getClass().getSimpleName() + " is a " + clazz.getSimpleName());
-	    } 
-	    else 
-	    {
-	        System.out.println(v.getClass().getSimpleName() + " is not a " + clazz.getSimpleName());
-	    }
-
-	    return correctType;
+		
+		if(clazz.isInstance(v))
+		{
+			return true;
+		}
+	    return false;
 	}
 	
 //nmc
