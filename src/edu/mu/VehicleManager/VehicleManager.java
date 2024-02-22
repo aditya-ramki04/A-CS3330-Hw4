@@ -15,6 +15,12 @@ public class VehicleManager {
 	private final static double distance = 300;
 	private final static double fuelPrice = 3.25;
 	
+	public double getDistance() {
+		return distance;
+	}
+	public double getFuelPrice() {
+		return fuelPrice;
+	}
 	
 	public VehicleManager() {
 		// TODO Auto-generated constructor stub
@@ -285,10 +291,20 @@ public class VehicleManager {
 	    return correctType;
 	}
 	
-//	public int getNumberOfVehichlesByType(Class clazz) {
-//		
-//	}
-	
+//nmc
+	public int getNumberOfVehichlesByType(Class clazz) {
+		int count = 0;
+		for(Vehicle vehicle : vehicleList) {
+			if(isVehicleType(vehicle, clazz)) {
+				count++;
+			}
+		}
+		//prints the number of vehicles of each type
+		//call in main
+		System.out.println("Number of " + clazz.getSimpleName() + "s: " + count);
+		return count;
+	}
+//nmc
 	//Abhi wrote this code
 	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double fuelPrice)
 	{
@@ -386,6 +402,10 @@ public class VehicleManager {
 	        }
 	        return lowestCostVehicle;
 	    }
+	
+	public double getAverageFuelEfficiencyofSUVs(double distance, double fuelPrice) {
+
+		
 	}
 	
 	
