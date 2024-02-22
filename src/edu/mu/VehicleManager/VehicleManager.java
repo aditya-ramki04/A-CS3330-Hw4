@@ -160,7 +160,7 @@ public class VehicleManager {
 		}
 		if(!foundBike)
 		{
-			System.out.println("No trucks have been found.");
+			System.out.println("No motorbikes have been found.");
 		}
 	}
 	
@@ -179,7 +179,7 @@ public class VehicleManager {
 	//Aditya
 	public void displayAllVehicleInformation() {
 		for(Vehicle vehicle: vehicleList) {
-			vehicle.toString();
+			System.out.println(vehicle.toString());
 		}
 	}
 	
@@ -234,7 +234,7 @@ public class VehicleManager {
 	public boolean saveVehicleList() {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(vehicleFilePath, false));
-			bw.write("Type,Title,Price,Year,Genre");
+			bw.write("Type,Model,Make,ModelYear,Price,Color,FuelType,Mileage,Mass,Cylinders,GasTankCapacity,StartType");
 			bw.newLine();
 			
 		

@@ -11,6 +11,8 @@ public class Main {
 		 VehicleManager vehicleManager = new VehicleManager();
 		 vehicleManager.initializeStock();
 		 
+		 vehicleManager.saveVehicleList();
+		 
 		 // Read vehicle data from the vehcileList.csv file and initialize objects.
 		 // TODO
 		 
