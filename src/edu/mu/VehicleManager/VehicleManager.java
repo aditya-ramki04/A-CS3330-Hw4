@@ -100,12 +100,6 @@ public class VehicleManager {
 			if(isVehicleType(vehicle, Car.class)){
 				foundCar = true;
 				displayVehicleInformation(vehicle);
-				double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
-				System.out.println("Maintenance cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + maintenanceCost);
-				double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
-				System.out.println("Fuel Efficiency cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + fuelEfficiency);
-				vehicle.startEngine();
-				System.out.println("");
 			}
 		}
 		if(!foundCar) {
@@ -123,12 +117,6 @@ public class VehicleManager {
 		        {
 		            foundSUV = true;
 		            displayVehicleInformation(vehicle);
-					double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
-					System.out.println("Maintenance cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + maintenanceCost);
-					double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
-					System.out.println("Fuel Efficiency cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + fuelEfficiency);
-					vehicle.startEngine();
-					System.out.println("");
 		        }
 		    }
 		    if (!foundSUV) 
@@ -146,12 +134,6 @@ public class VehicleManager {
 			{
 				foundTruck = true;
 				displayVehicleInformation(vehicle);
-				double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
-				System.out.println("Maintenance cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + maintenanceCost);
-				double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
-				System.out.println("Fuel Efficiency cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + fuelEfficiency);
-				vehicle.startEngine();
-				System.out.println("");
 
 			}
 		}
@@ -369,9 +351,7 @@ public class VehicleManager {
         return highestCostVehicle;
     }
 	
-	
-	//this is not right fix it later
-
+	//matthew 
 	public Vehicle getVehicleWithLowestMaintenanceCost() {
 		 	if (vehicleList.isEmpty()) 
 		 	{
