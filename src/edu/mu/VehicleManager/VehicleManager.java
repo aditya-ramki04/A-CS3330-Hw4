@@ -104,6 +104,12 @@ public class VehicleManager {
 			if(isVehicleType(vehicle, Car.class)){
 				foundCar = true;
 				displayVehicleInformation(vehicle);
+				double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
+				System.out.println("Maintenance cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + maintenanceCost);
+				double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+				System.out.println("Fuel Efficiency cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + fuelEfficiency);
+				vehicle.startEngine();
+				System.out.println("");
 			}
 		}
 		if(!foundCar) {
@@ -420,7 +426,7 @@ public class VehicleManager {
 	        }
 	        return lowestCostVehicle;
 	    }
-	
+//nmc
 	public double getAverageFuelEfficiencyofSUVs(double distance, double fuelPrice) {
 		double totalFuelEfficiency = 0.0;
 		int suvCount = 0;
@@ -438,7 +444,7 @@ public class VehicleManager {
 		}
 		return totalFuelEfficiency / suvCount;
 	}
-	
+//nmc
 	
 	//Aditya
 	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
