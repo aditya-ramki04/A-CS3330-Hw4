@@ -185,9 +185,12 @@ public class VehicleManager {
 	
 	//Aditya
 	public void displayAllVehicleInformation() {
-		for(Vehicle vehicle: vehicleList) {
-			System.out.println(vehicle.toString());
+		if(vehicleList != null) {
+			for(Vehicle vehicle: vehicleList) {
+				System.out.println(vehicle.toString());
+			}
 		}
+		
 	}
 	
 //by nmc	
