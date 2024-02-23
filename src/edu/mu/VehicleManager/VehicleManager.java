@@ -3,8 +3,6 @@ import java.io.*;
 import java.util.*;
 import edu.mu.Vehicle.*;
 
-
-
 public class VehicleManager {
 
 
@@ -39,7 +37,6 @@ public class VehicleManager {
 		try { 
 			Scanner fileIn = new Scanner(new FileInputStream(vehicleFilePath));
 			fileIn = new Scanner(new FileInputStream(vehicleFilePath));
-			int index = 0;
 			if(fileIn.hasNextLine())
 			{
 				fileIn.nextLine();
@@ -51,7 +48,7 @@ public class VehicleManager {
 				String type = parts[0];
 				String model = parts[1];
 				String make = parts[2];
-				long modelYear = Long.parseLong(parts[3]); //using parseInt to parse it from String to int and then storing it in id.
+				long modelYear = Long.parseLong(parts[3]); 
 				double price = Double.parseDouble(parts[4]);
 				VehicleColor color = VehicleColor.valueOf(parts[5]);
 				FuelType fuelType = FuelType.valueOf(parts[6]);
@@ -94,7 +91,6 @@ public class VehicleManager {
 		}
 		
 	}
-	
 	
 //nmc	
 	public void displayAllCarInformation() {
@@ -322,6 +318,7 @@ public class VehicleManager {
 		for(Vehicle vehicle : vehicleList) {
 			if(isVehicleType(vehicle, clazz)) {
 				count++;
+				
 			}
 		}
 		//prints the number of vehicles of each type

@@ -9,18 +9,40 @@ public class Main {
 		 vehicleManager.initializeStock();
 		 
 		 vehicleManager.saveVehicleList();
+<<<<<<< Updated upstream
 	
+=======
+		 
+		 // Read vehicle data from the vehcileList.csv file and initialize objects.
+		 // TODO
+		 
+>>>>>>> Stashed changes
 		 // Display all vehicle information.
 		 //nmc
 		 int numberOfTrucks = vehicleManager.getNumberOfVehichlesByType(Truck.class);
 		 int numberOfSUVs = vehicleManager.getNumberOfVehichlesByType(SUV.class);
 	     System.out.println("Average Fuel Efficiency of SUVs: " + vehicleManager.getAverageFuelEfficiencyofSUVs(vehicleManager.getDistance(), vehicleManager.getFuelPrice()));
+<<<<<<< Updated upstream
 
 		 int numberOfCars = vehicleManager.getNumberOfVehichlesByType(Car.class);
 
 		 int numberOfMotorBikes = vehicleManager.getNumberOfVehichlesByType(MotorBike.class);
 
 
+=======
+		 
+		 // Display all car information.
+		 //nmc
+		 int numberOfCars = vehicleManager.getNumberOfVehichlesByType(Car.class);
+		 
+		 // Display all motorbike information.
+		 //nmc
+		 int numberOfMotorBikes = vehicleManager.getNumberOfVehichlesByType(MotorBike.class);
+
+		 
+		 
+//		 
+>>>>>>> Stashed changes
 		 vehicleManager.displayAllTruckInformation();
 		 vehicleManager.displayAllCarInformation();
 		 vehicleManager.displayAllMotorBikeInformation();
@@ -32,8 +54,9 @@ public class Main {
 		 Truck t = new Truck("Toyota", "Takuma", 2000, 100000.0, VehicleColor.WHITE, FuelType.DIESEL, 50000.0, 2.0, 12, 25.0, StartMechanism.KEYSTART);
 		 Car c = new Car("Honda", "yo", 2024, 18000.0, VehicleColor.GRAY, FuelType.ELECTRIC, 50000.0, .25, 6, 14.0, StartMechanism.PUSHSTART);
 		 
-		 vehicleManager.displayVehicleInformation(t);
-		 vehicleManager.displayVehicleInformation(c);
+		// System.out.println("Testing if vehicle type is correct " + vehicleManager.isVehicleType(t, Truck.class)); made sure if isVehicleType is correct, but it is private
+//		 vehicleManager.displayVehicleInformation(t);
+//		 vehicleManager.displayVehicleInformation(c);
 
 
 		 
