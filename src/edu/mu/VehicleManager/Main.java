@@ -9,48 +9,18 @@ public class Main {
 		 vehicleManager.initializeStock();
 		 
 		 vehicleManager.saveVehicleList();
-		 
-		 // Read vehicle data from the vehcileList.csv file and initialize objects.
-		 // TODO
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+	
 		 // Display all vehicle information.
 		 //nmc
 		 int numberOfTrucks = vehicleManager.getNumberOfVehichlesByType(Truck.class);
 		 int numberOfSUVs = vehicleManager.getNumberOfVehichlesByType(SUV.class);
 	     System.out.println("Average Fuel Efficiency of SUVs: " + vehicleManager.getAverageFuelEfficiencyofSUVs(vehicleManager.getDistance(), vehicleManager.getFuelPrice()));
 
-		 
-		 
-		 
-		 
-		 
-		 
-		 // Display all car information.
-		 //nmc
 		 int numberOfCars = vehicleManager.getNumberOfVehichlesByType(Car.class);
 
-
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 // Display all motorbike information.
-		 //nmc
 		 int numberOfMotorBikes = vehicleManager.getNumberOfVehichlesByType(MotorBike.class);
 
-		 
-		 
-		 
+
 		 vehicleManager.displayAllTruckInformation();
 		 vehicleManager.displayAllCarInformation();
 		 vehicleManager.displayAllMotorBikeInformation();
