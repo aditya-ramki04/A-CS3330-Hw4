@@ -34,7 +34,7 @@ public class VehicleManager {
 		}
 		return instance;
 	}
-
+	//matthew did this
 	public boolean initializeStock() {
 		try { 
 			Scanner fileIn = new Scanner(new FileInputStream(vehicleFilePath));
@@ -110,8 +110,8 @@ public class VehicleManager {
 			System.out.println("No Cars found in the vehicle list.");
 		}
 	}
-//nmc
-		
+
+	//matthew did this
 	public void displayAllSUVInformation() 
 	{
 		 boolean foundSUV = false;
@@ -121,6 +121,12 @@ public class VehicleManager {
 		        {
 		            foundSUV = true;
 		            displayVehicleInformation(vehicle);
+					double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
+					System.out.println("Maintenance cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + maintenanceCost);
+					double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+					System.out.println("Fuel Efficiency cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + fuelEfficiency);
+					vehicle.startEngine();
+					System.out.println("");
 		        }
 		    }
 		    if (!foundSUV) 
@@ -171,11 +177,19 @@ public class VehicleManager {
 		}
 	}
 	
+	//Matthew did this
 	public void displayVehicleInformation(Vehicle v)
 	{
-		if (v != null) 
+		
+		if (v != null && vehicleList.contains(v)) 
 		{
-	        System.out.println(v.toString());
+			displayVehicleInformation(v);
+			double maintenanceCost = v.calculateMaintenaceCost(distance, fuelPrice);
+			System.out.println("Maintenance cost of " + v.getBrand() + " " + v.getMake() + " is " + maintenanceCost);
+			double fuelEfficiency = v.calculateFuelEfficiency(distance, fuelPrice);
+			System.out.println("Fuel Efficiency cost of " + v.getBrand() + " " + v.getMake() + " is " + fuelEfficiency);
+			v.startEngine();
+			System.out.println("");
 	    } 
 		else 
 		{
@@ -286,9 +300,9 @@ public class VehicleManager {
 				return false;
 			}
 	}
-	
-	private boolean isVehicleType(Vehicle v, Class clazz) {
-		
+	//matthew did this
+	private boolean isVehicleType(Vehicle v, Class clazz) 
+	{
 		if(clazz.isInstance(v))
 		{
 			return true;
