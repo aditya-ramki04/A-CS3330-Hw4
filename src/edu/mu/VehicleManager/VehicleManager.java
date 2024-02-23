@@ -209,40 +209,18 @@ public class VehicleManager {
 		
 	}
 	
-//by nmc	
-	//same function as the one commented below just can tell if it works or not from
-	//terminal via print statements
-	//will remove one or the other during final check with team 
-	public boolean removeVehicle(Vehicle vehicle) {
-		if(vehicle != null) {
-			for(Vehicle v : vehicleList) {
-				if(v.equals(vehicle)) {
-					vehicleList.remove(v);
-					System.out.println("Vehicle has been removed.");
-					return true;
-				} else {
-					System.out.println("Vehicle removal failed.");
-				}
-			}
-			System.out.println("Vehicle not found in the list... removal failed.");
-			return false;
-		}else {
-			System.out.println("Invalid object... removal failed.");
-			return false;
-		}
-	}
 	
-//	public boolean removeVehicle(Vehicle vehicle) {
-//	    if (vehicle != null) {
-//	        for (Vehicle v : vehicleList) {
-//	            if (v.equals(vehicle)) {
-//	                vehicleList.remove(v);
-//	                return true;
-//	            }
-//	        }
-//	    }
-//	    return false;
-//	}
+	public boolean removeVehicle(Vehicle vehicle) {
+	    if (vehicle != null) {
+	        for (Vehicle v : vehicleList) {
+	            if (v.equals(vehicle)) {
+	                vehicleList.remove(v);
+	                return true;
+	            }
+	        }
+	    }
+	    return false;
+	}
 //by nmc
 
 
