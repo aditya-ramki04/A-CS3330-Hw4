@@ -9,27 +9,18 @@ public class Main {
 		 vehicleManager.initializeStock();
 		 
 		 vehicleManager.saveVehicleList();
-<<<<<<< Updated upstream
-	
-=======
+
 		 
 		 // Read vehicle data from the vehcileList.csv file and initialize objects.
 		 // TODO
 		 
->>>>>>> Stashed changes
+
 		 // Display all vehicle information.
 		 //nmc
 		 int numberOfTrucks = vehicleManager.getNumberOfVehichlesByType(Truck.class);
 		 int numberOfSUVs = vehicleManager.getNumberOfVehichlesByType(SUV.class);
 	     System.out.println("Average Fuel Efficiency of SUVs: " + vehicleManager.getAverageFuelEfficiencyofSUVs(vehicleManager.getDistance(), vehicleManager.getFuelPrice()));
-<<<<<<< Updated upstream
 
-		 int numberOfCars = vehicleManager.getNumberOfVehichlesByType(Car.class);
-
-		 int numberOfMotorBikes = vehicleManager.getNumberOfVehichlesByType(MotorBike.class);
-
-
-=======
 		 
 		 // Display all car information.
 		 //nmc
@@ -42,7 +33,6 @@ public class Main {
 		 
 		 
 //		 
->>>>>>> Stashed changes
 		 vehicleManager.displayAllTruckInformation();
 		 vehicleManager.displayAllCarInformation();
 		 vehicleManager.displayAllMotorBikeInformation();
