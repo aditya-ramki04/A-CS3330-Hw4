@@ -189,7 +189,7 @@ public class VehicleManager {
 		
 		if (v != null && vehicleList.contains(v)) 
 		{
-			displayVehicleInformation(v);
+			
 			double maintenanceCost = v.calculateMaintenaceCost(distance, fuelPrice);
 			System.out.println("Maintenance cost of " + v.getBrand() + " " + v.getMake() + " is " + maintenanceCost);
 			double fuelEfficiency = v.calculateFuelEfficiency(distance, fuelPrice);
