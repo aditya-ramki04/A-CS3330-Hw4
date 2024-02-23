@@ -138,6 +138,13 @@ public class VehicleManager {
 			{
 				foundTruck = true;
 				displayVehicleInformation(vehicle);
+				double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
+				System.out.println("Maintenance cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + maintenanceCost);
+				double fuelEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+				System.out.println("Fuel Efficiency cost of " + vehicle.getBrand() + " " + vehicle.getMake() + " is " + fuelEfficiency);
+				vehicle.startEngine();
+				System.out.println("");
+
 			}
 		}
 		if(!foundTruck)
