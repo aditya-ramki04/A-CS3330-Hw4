@@ -33,8 +33,11 @@ public class VehicleManager {
 		return instance;
 	}
 	//matthew did this
-	public boolean initializeStock() {
-		try { 
+	public boolean initializeStock() 
+	{
+		//used code from previous assignments on this function 
+		try 
+		{ 
 			Scanner fileIn = new Scanner(new FileInputStream(vehicleFilePath));
 			fileIn = new Scanner(new FileInputStream(vehicleFilePath));
 			if(fileIn.hasNextLine())
@@ -43,8 +46,8 @@ public class VehicleManager {
 			}
 			while(fileIn.hasNextLine())
 			{
-				String line = fileIn.nextLine(); //gets the next line to hold the whole line 
-				String parts[] = line.split(","); //splits the line at each " " so now the parts array has the id, Name, grade
+				String line = fileIn.nextLine();
+				String parts[] = line.split(","); 
 				String type = parts[0];
 				String model = parts[1];
 				String make = parts[2];
@@ -79,11 +82,11 @@ public class VehicleManager {
 				}
 				
 			}
-			fileIn.close();//closes file
+			fileIn.close();
 			
 			
 			return true;
-		} catch (FileNotFoundException e) //if file not found then return no file found and return false.
+		} catch (FileNotFoundException e) 
 		{
 			System.out.println("No File Found");
 			e.printStackTrace();
@@ -94,7 +97,8 @@ public class VehicleManager {
 	
 //nmc	
 	public void displayAllCarInformation() {
-		
+		//loops through the arraylist of vehicle to determine if the car is in the list.
+		//if it finds it, it displays the information otherwise prints error message
 		boolean foundCar = false;
 		for(Vehicle vehicle : vehicleList) {
 			if(isVehicleType(vehicle, Car.class)){
@@ -110,6 +114,8 @@ public class VehicleManager {
 	//matthew did this
 	public void displayAllSUVInformation() 
 	{
+		//loops through the arraylist of vehicle to determine if the SUV is in the list.
+		//if it finds it, it displays the information otherwise prints error message
 		 boolean foundSUV = false;
 		    for (Vehicle vehicle : vehicleList) 
 		    {
@@ -127,6 +133,8 @@ public class VehicleManager {
 	
 	public void displayAllTruckInformation() 
 	{
+		//loops through the arraylist of vehicle to determine if the truck is in the list.
+		//if it finds it, it displays the information otherwise prints error message
 		boolean foundTruck = false;
 		for (Vehicle vehicle : vehicleList)
 		{
@@ -146,6 +154,8 @@ public class VehicleManager {
 	
 	//Aditya
 	public void displayAllMotorBikeInformation() {
+		//loops through the arraylist of vehicle to determine if the motorbike is in the list.
+		//if it finds it, it displays the information otherwise prints error message
 		boolean foundBike = false;
 		for (Vehicle vehicle : vehicleList)
 		{
@@ -164,7 +174,8 @@ public class VehicleManager {
 	//Matthew did this
 	public void displayVehicleInformation(Vehicle v)
 	{
-		
+		//checks if the vehicle v is in the vehiclelist, and then prints out the maintenancecost, 
+		//fuelefficieny, and  how the engine starts, otherwise if it wasn't found, prints an error
 		if (v != null && vehicleList.contains(v)) 
 		{
 			
@@ -182,7 +193,9 @@ public class VehicleManager {
 	}
 	
 	//Aditya
-	public void displayAllVehicleInformation() {
+	public void displayAllVehicleInformation() 
+	{
+		//loops through the arraylist of vehicle list and uses a toString(). to print all the vehicle information 
 		if(vehicleList != null) {
 			for(Vehicle vehicle: vehicleList) {
 				System.out.println(vehicle.toString());
@@ -193,6 +206,8 @@ public class VehicleManager {
 	
 	
 	public boolean removeVehicle(Vehicle vehicle) {
+		//Code similar to previous assignment, but loops through the arrayList of vehicleList to 
+		//remove the specified vechile
 	    if (vehicle != null) {
 	        for (Vehicle v : vehicleList) {
 	            if (v.equals(vehicle)) {
@@ -209,6 +224,7 @@ public class VehicleManager {
 	//Abhi made this code
 	public boolean addVehicle(Vehicle vehicle) 
 	{
+		///Code similar to previous assignment, but adds the vehicle object to the end of the arrayList of vehicleList
 		if(vehicle != null) {
 			vehicleList.add(vehicle);
 			return true;
@@ -218,6 +234,8 @@ public class VehicleManager {
 	
 	//Aditya
 	public boolean saveVehicleList() {
+		//code similar to previous assignment,  and saves information onto CSV file and checks if it properly done. 
+		//otherwise prints an error statement
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(vehicleFilePath, false));
 			bw.write("Type,Model,Make,ModelYear,Price,Color,FuelType,Mileage,Mass,Cylinders,GasTankCapacity,StartType");
@@ -265,6 +283,7 @@ public class VehicleManager {
 	//matthew did this
 	private boolean isVehicleType(Vehicle v, Class clazz) 
 	{
+		//determines if the class is a subclass of vehicle, if not returns false
 		if(clazz.isInstance(v))
 		{
 			return true;
@@ -274,6 +293,7 @@ public class VehicleManager {
 	
 //nmc
 	public int getNumberOfVehichlesByType(Class clazz) {
+		//loops througs and if vehicle is correct, adds to count and prints the number of vehciles by the designated type
 		int count = 0;
 		for(Vehicle vehicle : vehicleList) {
 			if(isVehicleType(vehicle, clazz)) {
@@ -283,13 +303,16 @@ public class VehicleManager {
 		}
 		//prints the number of vehicles of each type
 		//call in main
-		System.out.println("Number of " + clazz.getSimpleName() + "s: " + count);
+		System.out.println("The number of " + clazz.getSimpleName() + "s: " + count);
 		return count;
 	}
 //nmc
 	//Abhi wrote this code
 	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double fuelPrice)
 	{
+		//checks if list is empty and prints an error, otherwise creates new arraylist and loops through 
+		//with a for each loop and determines the lowest value for the fuel efficieny, uses the random if the values are the 
+		//same to determine which to print
 		if (vehicleList.isEmpty()) 
 	 	{
             System.out.println("No vehicles in the list.");
@@ -322,6 +345,9 @@ public class VehicleManager {
 	//Abhi made this code.
 	public Vehicle getVehicleWithHighestMaintenanceCost() 
 	{
+		//checks if list is empty and prints an error, otherwise creates new arraylist and loops through 
+		//with a for each loop and determines the highest value for the maintenance cost, uses the random if the values are the 
+		//same to determine which to print
 		if (vehicleList.isEmpty()) 
 	 	{
             System.out.println("No vehicles in the list.");
@@ -353,6 +379,9 @@ public class VehicleManager {
 	
 	//matthew 
 	public Vehicle getVehicleWithLowestMaintenanceCost() {
+		//checks if list is empty and prints an error, otherwise creates new arraylist and loops through 
+		//with a for each loop and determines the lowest value for the maintenance cost, uses the random if the values are the 
+		//same to determine which to print
 		 	if (vehicleList.isEmpty()) 
 		 	{
 	            System.out.println("No vehicles in the list.");
@@ -361,7 +390,8 @@ public class VehicleManager {
 		 	Vehicle lowestCostVehicle = null;
 	        double lowestMaintenanceCost = Double.MAX_VALUE;
 
-	        for (Vehicle vehicle : vehicleList) {
+	        for (Vehicle vehicle : vehicleList) 
+	        {
 	            double maintenanceCost = vehicle.calculateMaintenaceCost(distance, fuelPrice);
 
 	            if (maintenanceCost < lowestMaintenanceCost) 
@@ -371,7 +401,6 @@ public class VehicleManager {
 	            } 
 	            else if (maintenanceCost == lowestMaintenanceCost) 
 	            {
-	                // Randomly choose between the current vehicle and the one with the same maintenance cost
 	                Random random = new Random();
 	                if (random.nextBoolean()) 
 	                {
@@ -383,6 +412,8 @@ public class VehicleManager {
 	    }
 //nmc
 	public double getAverageFuelEfficiencyofSUVs(double distance, double fuelPrice) {
+		//loops through vehicle list and uses calculateFuelEfficieny to determine the average fuel efficieny of SUVs.
+		//if the count is 0, prints an error message
 		double totalFuelEfficiency = 0.0;
 		int suvCount = 0;
 		
@@ -403,6 +434,9 @@ public class VehicleManager {
 	
 	//Aditya
 	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
+		//checks if list is empty and prints an error, otherwise creates new arraylist and loops through 
+		//with a for each loop and determines the highest value for the fuel efficieny, uses the random if the values are the 
+		//same to determine which to print
 		if (vehicleList.isEmpty()) 
 	 	{
             System.out.println("No vehicles in the list.");
