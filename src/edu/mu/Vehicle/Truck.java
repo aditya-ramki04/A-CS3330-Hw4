@@ -15,6 +15,7 @@ public class Truck extends Vehicle
 	@Override
 	public double calculateMaintenaceCost(double distance, double fuelPrice) 
 	{
+		//uses the formula given to calculate the maintenance and returns it
 		double maintenance = distance * mass * (2024 - modelYear) * cylinders * 0.002;
 		return maintenance;
 	}
@@ -22,13 +23,16 @@ public class Truck extends Vehicle
 	@Override
 	public double calculateFuelEfficiency(double distance, double fuelPrice) 
 	{
+		//uses the formula given to calculate the fuel efficiency and returns it
 		double fuelEfficiency = cylinders * gasTankCapacity * fuelPrice/distance *0.1;
 		return fuelEfficiency;
 		
 	}
 
 	@Override
-	public void startEngine() {
+	public void startEngine() 
+	{
+		//prints how the vehicle starts
 		System.out.println("The truck has started using " + startType + "!");
 		
 	}

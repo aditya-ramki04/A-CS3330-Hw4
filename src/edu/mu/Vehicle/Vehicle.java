@@ -34,6 +34,8 @@ public abstract class Vehicle {
 	 this.gasTankCapacity = gasTankCapacity;
 	 this.startType = startType2;
 	}
+	
+	//all setters and getters for each variable
 	public String getBrand() {
 		return brand;
 	}
@@ -101,7 +103,7 @@ public abstract class Vehicle {
 		this.startType = startType;
 	}
 	
-	@Override
+	@Override //toString made to print out each vehicle with all of their attributes
 	public String toString() {
 		return "Vehicle [brand=" + brand + ", make=" + make + ", modelYear=" + modelYear + ", price=" + price
 				+ ", color=" + color + ", fuelType=" + fuelType + ", mileage=" + mileage + ", mass=" + mass

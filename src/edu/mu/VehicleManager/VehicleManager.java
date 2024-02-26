@@ -294,7 +294,7 @@ public class VehicleManager {
 	
 //nmc
 	public int getNumberOfVehichlesByType(Class clazz) {
-		//loops througs and if vehicle is correct, adds to count and prints the number of vehciles by the designated type
+		//loops through and if vehicle is correct, adds to count and prints the number of vehicles by the designated type
 		int count = 0;
 		for(Vehicle vehicle : vehicleList) {
 			if(isVehicleType(vehicle, clazz)) {
@@ -308,11 +308,12 @@ public class VehicleManager {
 		return count;
 	}
 //nmc
+	
 	//Abhi wrote this code
 	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double fuelPrice)
 	{
 		//checks if list is empty and prints an error, otherwise creates new arraylist and loops through 
-		//with a for each loop and determines the lowest value for the fuel efficieny, uses the random if the values are the 
+		//with a for each loop and determines the lowest value for the fuel efficiency, uses the random if the values are the 
 		//same to determine which to print
 		if (vehicleList.isEmpty()) 
 	 	{
